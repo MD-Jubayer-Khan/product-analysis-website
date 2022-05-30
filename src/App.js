@@ -8,6 +8,7 @@ import Blogs from './Components/Blogs/Blogs';
 import About from './Components/About/About';
 import NotFound from './Components/NotFound/NotFound'
 
+
 function App() {
   return (
     <div className="App">

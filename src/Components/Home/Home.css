@@ -2,6 +2,5 @@
     display: grid;
     grid-template-columns: 4fr 1fr;
     grid-gap: 30px;
-    color: rgb(214, 236, 255)
 
 };
