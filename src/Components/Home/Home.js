@@ -3,11 +3,17 @@ import image from './image/multiple.png';
 import './Home.css';
 import useReviews from '../hooks/useReviews';
 import CustomerReview from '../CustomerReview/CustomerReview';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [reviews, setReviews] = useReviews();
   const allReviews = reviews.slice(0, 3);
+  const navigate = useNavigate();
+
+  const showAllReviews =  () =>{
+    navigate('/reviews')
+
+  }
 
     return (
        <div>
@@ -28,7 +34,7 @@ const Home = () => {
           {
             allReviews.map(review => <CustomerReview key={review.id} name={review.name} text={review.text} rating={review.ratings}></CustomerReview>)
           }
-        <Link to="reviews"> <button style={{border:'none', backgroundColor:'rgb(161, 211, 255)', color:'blue', fontSize:"20px", height:'40px', width:'150px', borderRadius:'6px', marginTop:'50px', marginBottom:'20px'}}>See all reviews</button></Link>
+     <button onClick={showAllReviews} style={{border:'none', backgroundColor:'rgb(161, 211, 255)', color:'blue', fontSize:"20px", height:'40px', width:'150px', borderRadius:'6px', marginTop:'50px', marginBottom:'20px'}}>See all reviews</button>
         </div>
        </div>
     );
